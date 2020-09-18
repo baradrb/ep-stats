@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Evaluation package for experimentation platform." name="description"/>
+<link href="https://github.com/avast/ep-stats/stats/sequential.html" rel="canonical"/>
+<meta content="Team Doodlebug" name="author"/>
+<link href="../experiment_b.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.12" name="generator"/>
+<title>Sequential Evaluation - Ep-Stats</title>
+<link href="../assets/stylesheets/main.4dd2dd8d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#sequential-analysis">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Ep-Stats" class="md-header-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Ep-Stats
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              Sequential Evaluation
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+          Home
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../user_guide/quick_start.html">
+          User Guide
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="basics.html">
+          Statistics
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../api/experiment.html">
+          API
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ep-Stats" class="md-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+    Ep-Stats
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Home" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html" title="Introduction">
+      Introduction
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../principles.html" title="Principles">
+      Principles
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../resources.html" title="Resources">
+      Resources
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="User Guide" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/quick_start.html" title="Quick Start">
+      Quick Start
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/protocol.html" title="Experimentation Protocol">
+      Experimentation Protocol
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/ep_in_python.ipynb" title="Using Ep-Stats in Jupyter">
+      Using Ep-Stats in Jupyter
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/aggregation.html" title="Aggregation">
+      Aggregation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/configuring_api.html" title="Configuring API">
+      Configuring API
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/test_data.html" title="Test Data">
+      Test Data
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Statistics
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Statistics" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon"></span>
+        Statistics
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="basics.html" title="Basics">
+      Basics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="sample_size.html" title="Sample Size">
+      Sample Size
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Sequential Evaluation
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="sequential.html" title="Sequential Evaluation">
+      Sequential Evaluation
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peeking-at-temporary-results-is-wrong">
+    Peeking at Temporary Results is Wrong
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alpha-spending-function">
+    Alpha Spending Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simulation">
+    Simulation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ctr.html" title="CTR Metric Redefined">
+      CTR Metric Redefined
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="multiple.html" title="Multiple Comparison Correction">
+      Multiple Comparison Correction
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      API
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon"></span>
+        API
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/experiment.html" title="Experiment">
+      Experiment
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/evaluation.html" title="Evaluation">
+      Evaluation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/statistics.html" title="Statistics">
+      Statistics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/check.html" title="Check">
+      Check
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/srm_check.html" title="SrmCheck">
+      SrmCheck
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/dao.html" title="Dao">
+      Dao
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/dao_factory.html" title="DaoFactory">
+      DaoFactory
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/test_data.html" title="TestData">
+      TestData
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#peeking-at-temporary-results-is-wrong">
+    Peeking at Temporary Results is Wrong
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alpha-spending-function">
+    Alpha Spending Function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simulation">
+    Simulation
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/avast/ep-stats/edit/master/docs/stats/sequential.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="sequential-analysis">Sequential Analysis<a class="headerlink" href="#sequential-analysis" title="Permanent link">¶</a></h1>
+<p>There is a strong demand from experimenters to statisticians for support of online decision making in online controlled experiments (OCE). Given big volume of observations and real-time nature of modern data pipelines, this demand is validated.</p>
+<p>This brings new issues to statistical evaluations. We cannot use standard Student’s t-test, because it assumes that we evaluate data only once - after all experiment data has been collected.</p>
+<p>It has been known for a while, that evaluating experiments sequentially using standard t-tests increases dramatically type I errors (False-positive errors) that platforms try to keep below desired 5%. Using standard t-tests sequentially increases false-positive errors to a range of 20-30% or even higher making whole statistical inference useless.</p>
+<p>We verified this statement using simulations of A/A tests.</p>
+<p>We can evaluate experiments sequentially without exceeding desired false-positive errors using more sophisticated methods. Unfortunately, there is no unique approach how to deal with this problem. Multiple approaches differs mainly in mathematical complexity. Therefore we present a very basic one, so-called <em>Alpha Spending Function</em><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Despite its simplicity, it had been used in clinical trials for decades, so we have a good reason to use it too.</p>
+<h2 id="peeking-at-temporary-results-is-wrong">Peeking at Temporary Results is Wrong<a class="headerlink" href="#peeking-at-temporary-results-is-wrong" title="Permanent link">¶</a></h2>
+<p>We can say that any A/A experiment when ran long enough will show significant difference in the primary metric regardless of the validity of the null hypothesis. So there's 100% chance that we get false-positive result if we are not careful about this fact. We want to keep this error below 5% any-time. This is not possible without setting experiment duration before starting it. Knowing where we are in the period of experiment helps EP to provide results with controlled false-positive error rate any time.</p>
+<p>Following graph illustrates this problem. Test statistic measures difference in value of treatment variant metric to the value of control variant on unit scale. If we call the experiment off once the value of the test statistics crosses one of two constant boundaries (dashed lines) for the first time at day 6, we might be doing false-positive error compared to if we evaluated the experiment once completed at day 14.</p>
+<p><img alt="" src="images/constant.png"/></p>
+<h2 id="alpha-spending-function">Alpha Spending Function<a class="headerlink" href="#alpha-spending-function" title="Permanent link">¶</a></h2>
+<p>EP allows for safe early-stopping when observed difference is big enough. It requires the difference to be bigger early in the experiment than at the end of the experiment. Intuition is that if the experiment is doing really great or really poor, we do not need to wait full experiment duration to make a decision.</p>
+<p>Following graph shows decreasing decision boundary that requires observed difference to be big at the beginning of the experiment and decreases along the time. The decision boundary is called <em>Alpha Spending Function</em> and we implemented O'Brien-Fleming<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> version of it.</p>
+<p><img alt="" src="images/sequential.png"/></p>
+<p>This process ensures below 5% false-positive errors at any time during the experiment but requires setting experiment duration upfront to be able to calculate decreasing boundaries. This requirement is covered in implementation of the <a href="../user_guide/protocol.html">experiment protocol</a>.</p>
+<h2 id="simulation">Simulation<a class="headerlink" href="#simulation" title="Permanent link">¶</a></h2>
+<p>We simulate 2000 A/A experiments for Click-through rate metric. We want to compare three possible solutions to sequential evaluation:</p>
+<ol>
+<li>Old-school - we evaluate the experiment once and after all data has been collected.</li>
+<li>p-Value hacking or peeking - we evaluate the experiment once a day during whole experiment duration using constant decision boundaries.</li>
+<li>Sequential experimenting - we use alpha spending function and evaluate once a day during whole experiment duration.</li>
+</ol>
+<p>We measure the quality of the solution by false-positive error rate.</p>
+<p>Following chart depicts development of A/A experiments in 14 days. We see that old-school and sequential experimenting methods keep false-positives below 5% while p-value hacking method shows false-positive errors around 20%.</p>
+<p>The longer we run the experiment the greater false-positive error rate we can expect. It can even be 29% for 30-day experiment.</p>
+<p><img alt="" src="images/simulation.png"/></p>
+<p>We can conclude that sequential experimenting is the best method for our needs and simple enough to implement.</p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://eclass.uoa.gr/modules/document/file.php/MATH301/PracticalSession3/LanDeMets.pdf">David L. DeMents, K. K. Gordon Lan, Interim analysis: The alpha spending function approach</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://doi.org/10.2307%2F2530245">P. C. O’Brien, T.R. Fleming - A Multiple Testing Procedure for Clinical Trials</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="sample_size.html" rel="prev" title="Sample Size">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Sample Size
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="ctr.html" rel="next" title="CTR Metric Redefined">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                CTR Metric Redefined
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Maintained by <a href="https://github.com/avast">Avast</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+<script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

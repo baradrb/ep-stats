@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Evaluation package for experimentation platform." name="description"/>
+<link href="https://github.com/avast/ep-stats/user_guide/aggregation.html" rel="canonical"/>
+<meta content="Team Doodlebug" name="author"/>
+<link href="../experiment_b.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.12" name="generator"/>
+<title>Aggregation - Ep-Stats</title>
+<link href="../assets/stylesheets/main.4dd2dd8d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#aggregation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Ep-Stats" class="md-header-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Ep-Stats
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              Aggregation
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+          Home
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="quick_start.html">
+          User Guide
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../stats/basics.html">
+          Statistics
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../api/experiment.html">
+          API
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ep-Stats" class="md-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+    Ep-Stats
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Home" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html" title="Introduction">
+      Introduction
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../principles.html" title="Principles">
+      Principles
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../resources.html" title="Resources">
+      Resources
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="User Guide" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="quick_start.html" title="Quick Start">
+      Quick Start
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="protocol.html" title="Experimentation Protocol">
+      Experimentation Protocol
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="ep_in_python.ipynb" title="Using Ep-Stats in Jupyter">
+      Using Ep-Stats in Jupyter
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Aggregation
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="aggregation.html" title="Aggregation">
+      Aggregation
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#goals-in-metric-definition">
+    Goals in Metric Definition
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supported-unit-types">
+    Supported Unit Types
+  </a>
+<nav aria-label="Supported Unit Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#note-on-randomization">
+    Note on Randomization
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aggregation-types">
+    Aggregation Types
+  </a>
+<nav aria-label="Aggregation Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unit-aggregation-type">
+    Unit Aggregation Type
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#global-aggregation-type">
+    Global Aggregation Type
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dimensional-goals">
+    Dimensional Goals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+    Example
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="configuring_api.html" title="Configuring API">
+      Configuring API
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="test_data.html" title="Test Data">
+      Test Data
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Statistics
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Statistics" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon"></span>
+        Statistics
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/basics.html" title="Basics">
+      Basics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/sample_size.html" title="Sample Size">
+      Sample Size
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/sequential.html" title="Sequential Evaluation">
+      Sequential Evaluation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/ctr.html" title="CTR Metric Redefined">
+      CTR Metric Redefined
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/multiple.html" title="Multiple Comparison Correction">
+      Multiple Comparison Correction
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      API
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon"></span>
+        API
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/experiment.html" title="Experiment">
+      Experiment
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/evaluation.html" title="Evaluation">
+      Evaluation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/statistics.html" title="Statistics">
+      Statistics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/check.html" title="Check">
+      Check
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/srm_check.html" title="SrmCheck">
+      SrmCheck
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/dao.html" title="Dao">
+      Dao
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/dao_factory.html" title="DaoFactory">
+      DaoFactory
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/test_data.html" title="TestData">
+      TestData
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#goals-in-metric-definition">
+    Goals in Metric Definition
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supported-unit-types">
+    Supported Unit Types
+  </a>
+<nav aria-label="Supported Unit Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#note-on-randomization">
+    Note on Randomization
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aggregation-types">
+    Aggregation Types
+  </a>
+<nav aria-label="Aggregation Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unit-aggregation-type">
+    Unit Aggregation Type
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#global-aggregation-type">
+    Global Aggregation Type
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dimensional-goals">
+    Dimensional Goals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+    Example
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/avast/ep-stats/edit/master/docs/user_guide/aggregation.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="aggregation">Aggregation<a class="headerlink" href="#aggregation" title="Permanent link">¶</a></h1>
+<h2 id="goals-in-metric-definition">Goals in Metric Definition<a class="headerlink" href="#goals-in-metric-definition" title="Permanent link">¶</a></h2>
+<p>Goals in the metric definition look like</p>
+<p><code>value(test_unit_type.unit.conversion)</code></p>
+<p>where</p>
+<ul>
+<li><code>count</code>, <code>value</code>, or <code>unique</code> determines we need <em>number</em> of goals recorded or their <em>value</em> (e.g. USD bookings of <code>conversion</code> goal) or that we need only info if at least 1 goal has been collected.</li>
+<li><code>test_unit_type</code> is a type of the unit the goal has been recorded for.</li>
+<li><code>unit</code> or <code>global</code> are types of aggregation.</li>
+<li><code>conversion</code> is a name of the goal.</li>
+</ul>
+<h2 id="supported-unit-types">Supported Unit Types<a class="headerlink" href="#supported-unit-types" title="Permanent link">¶</a></h2>
+<p>Ep-stats support any type of randomization unit. It is a responsibility of an integrator to correctly query for the data.</p>
+<h3 id="note-on-randomization">Note on Randomization<a class="headerlink" href="#note-on-randomization" title="Permanent link">¶</a></h3>
+<p>It is necessary for the statistics to work correctly that unit exposures are randomly (independently and identically a.k.a. IID) distributed within one experiment into its variants. This is usually the case when we randomize at pageview or event session unit types.</p>
+<p>In general, one unit can experience the experiment variant multiple times.</p>
+<p>Violation of IID leads to uncontrolled false-positive errors in metric evaluation. Ep-stats remedies this IID violation by using <a href="../stats/ctr.html##asymptotic-distribution-of-ctr">delta method for IID</a>.</p>
+<h2 id="aggregation-types">Aggregation Types<a class="headerlink" href="#aggregation-types" title="Permanent link">¶</a></h2>
+<p>There are 2 types or levels of aggregation of goals available:</p>
+<ol>
+<li><code>global</code> aggregates goals as if one goal is one observation.</li>
+<li><code>unit</code> aggregates goals first per unit (e.g. count of <code>conversion</code> goals per unit id <code>unit_1</code>).</li>
+</ol>
+<h3 id="unit-aggregation-type">Unit Aggregation Type<a class="headerlink" href="#unit-aggregation-type" title="Permanent link">¶</a></h3>
+<p>We need to use <em>unit aggregation type</em> when we calculate any "per User" or generally any "per exposure" metrics. It is "per User" metric so we need all goals that happened for one user represented as one observation of one unit. This is required for correct calculation of sample standard deviation which is a basic block in all statistical evaluation methods.</p>
+<p>For example, if there are 2 <code>conversion</code> goals for unit id <code>unit_1</code>, we want to have 2 as a count of <code>conversion</code> goals for this unit id making it 1 observation rather than having 2 separate observations of <code>conversion</code> goals.</p>
+<h3 id="global-aggregation-type">Global Aggregation Type<a class="headerlink" href="#global-aggregation-type" title="Permanent link">¶</a></h3>
+<p><em>Global aggregation type</em> skips "per User" aggregation step described in previous section and treats every goal as one observation. This is now enough for all metrics that are not based directly on exposures of the experiment randomization unit type.</p>
+<p>For example Refund Rate metric defined as <code>count(test_unit_type.global.refund) / count(test_unit_type.global.conversion)</code> does not need to use unit aggregation type because 1 observation is 1 <code>conversion</code> that can have only zero or one <code>refund</code> goal.</p>
+<p>This kind of metrics needs application of delta method or bootstrapping which has not been implemented yet.</p>
+<h2 id="dimensional-goals">Dimensional Goals<a class="headerlink" href="#dimensional-goals" title="Permanent link">¶</a></h2>
+<p>Metric goal definition allows to filter goals by supported dimensions. For example we can specify that we want transactional metrics to be calculated only for transactions involving VPN products. Or we want Revenue per Mile or CTR metrics calculated for particular screen.</p>
+<p>For example Average Bookings of product <code>p_1</code> can be defined as</p>
+<div class="codehilite"><pre><span></span><code><span class="err">value(test_unit_type.unit.conversion(product=p_1)) / count(test_unit_type.global.exposure)</span>
+</code></pre></div>
+<p>Different goals may allow filtering by different dimensions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dimensions are not supported yet.</p>
+</div>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h2>
+<p>See <a href="test_data.html">Test Data</a> for examples of pre-aggregated goals that make input to statistical evaluation using <a href="../api/experiment.html#epstats.toolkit.experiment.Experiment.evaluate_agg"><code>Experiment.evaluate_agg</code></a> or per unit goals that make input to statistical evaluation using <a href="../api/experiment.html#epstats.toolkit.experiment.Experiment.evaluate_by_unit"><code>Experiment.evaluate_by_unit</code></a>.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="ep_in_python.ipynb" rel="prev" title="Using Ep-Stats in Jupyter">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using Ep-Stats in Jupyter
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="configuring_api.html" rel="next" title="Configuring API">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Configuring API
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Maintained by <a href="https://github.com/avast">Avast</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+<script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

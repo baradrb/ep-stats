@@ -1,0 +1,1153 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Evaluation package for experimentation platform." name="description"/>
+<link href="https://github.com/avast/ep-stats/api/experiment.html" rel="canonical"/>
+<meta content="Team Doodlebug" name="author"/>
+<link href="../experiment_b.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.12" name="generator"/>
+<title>Experiment - Ep-Stats</title>
+<link href="../assets/stylesheets/main.4dd2dd8d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#experiment">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Ep-Stats" class="md-header-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Ep-Stats
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              Experiment
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+          Home
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../user_guide/quick_start.html">
+          User Guide
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../stats/basics.html">
+          Statistics
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="experiment.html">
+          API
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ep-Stats" class="md-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+    Ep-Stats
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Home" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html" title="Introduction">
+      Introduction
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../principles.html" title="Principles">
+      Principles
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../resources.html" title="Resources">
+      Resources
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="User Guide" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/quick_start.html" title="Quick Start">
+      Quick Start
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/protocol.html" title="Experimentation Protocol">
+      Experimentation Protocol
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/ep_in_python.ipynb" title="Using Ep-Stats in Jupyter">
+      Using Ep-Stats in Jupyter
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/aggregation.html" title="Aggregation">
+      Aggregation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/configuring_api.html" title="Configuring API">
+      Configuring API
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/test_data.html" title="Test Data">
+      Test Data
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Statistics
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Statistics" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon"></span>
+        Statistics
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/basics.html" title="Basics">
+      Basics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/sample_size.html" title="Sample Size">
+      Sample Size
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/sequential.html" title="Sequential Evaluation">
+      Sequential Evaluation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/ctr.html" title="CTR Metric Redefined">
+      CTR Metric Redefined
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/multiple.html" title="Multiple Comparison Correction">
+      Multiple Comparison Correction
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      API
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon"></span>
+        API
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Experiment
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="experiment.html" title="Experiment">
+      Experiment
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment">
+    epstats.toolkit.experiment.Experiment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment.evaluate_agg">
+    evaluate_agg()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment.evaluate_by_unit">
+    evaluate_by_unit()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment.get_goals">
+    get_goals()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="evaluation.html" title="Evaluation">
+      Evaluation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="statistics.html" title="Statistics">
+      Statistics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="check.html" title="Check">
+      Check
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="srm_check.html" title="SrmCheck">
+      SrmCheck
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dao.html" title="Dao">
+      Dao
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dao_factory.html" title="DaoFactory">
+      DaoFactory
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="test_data.html" title="TestData">
+      TestData
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment">
+    epstats.toolkit.experiment.Experiment
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment.evaluate_agg">
+    evaluate_agg()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment.evaluate_by_unit">
+    evaluate_by_unit()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.experiment.Experiment.get_goals">
+    get_goals()
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/avast/ep-stats/edit/master/docs/api/experiment.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="experiment">Experiment<a class="headerlink" href="#experiment" title="Permanent link">¶</a></h1>
+<div class="doc doc-object doc-class">
+<h2 class="hidden-toc" href="#epstats.toolkit.experiment.Experiment" id="epstats.toolkit.experiment.Experiment" style="visibility: hidden; width: 0; height: 0;">
+<a class="headerlink" href="#epstats.toolkit.experiment.Experiment" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents first">
+<p>Evaluate one experiment described as a list of metrics and checks.</p>
+<p>See <a href="../stats/basics.html">Statistics</a> for details about statistical method used
+and <a href="evaluation.html#epstats.toolkit.experiment.Evaluation"><code>Evaluation</code></a> for description of output.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="epstats.toolkit.experiment.Experiment.evaluate_agg">
+<code class="highlight language-python">
+evaluate_agg<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">goals</span><span class="p">)</span> </code>
+<a class="headerlink" href="#epstats.toolkit.experiment.Experiment.evaluate_agg" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Evaluate all metrics and checks in the experiment from already pre-aggregated goals.</p>
+<p>This method is usefull when there are too many units in the experiment to evaluate it
+using <a href="#epstats.toolkit.experiment.Experiment.evaluate_by_unit"><code>evaluate_by_unit</code></a>.</p>
+<p>Does best effort to fill in missing goals and variants with zeros.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>goals</code></td>
+<td><code>DataFrame</code></td>
+<td>
+<p>dataframe with one row per goal and aggregated data in columns</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><code>goals</code> dataframe columns:</p>
+<ol>
+<li><code>exp_id</code> - experiment id</li>
+<li><code>exp_variant_id</code> - variant</li>
+<li><code>unit_type</code> - randomization unit type</li>
+<li><code>agg_type</code> - level of aggregation</li>
+<li><code>goal</code> - goal name</li>
+<li><code>dimension</code> - name of the dimension, e.g. <code>product</code></li>
+<li><code>dimension_value</code> - value of the dimension, e.g. <code>p_1</code></li>
+<li><code>count</code> - number of observed goals (e.g. conversions)</li>
+<li><code>sum_sqr_count</code> - summed squared number of observed goals per unit, it is similar
+to <code>sum_sqr_value</code></li>
+<li><code>sum_value</code> - value of observed goals</li>
+<li><code>sum_sqr_value</code> - summed squared value per unit.  This is used to calculate
+sample standard deviation from pre-aggregated data (it is a term <span><span class="MathJax_Preview">\sum x^2</span><script type="math/tex">\sum x^2</script></span>
+in <span><span class="MathJax_Preview">\hat{\sigma}^2 = \frac{\sum x^2 - \frac{(\sum x)^2}{n}}{n-1}</span><script type="math/tex">\hat{\sigma}^2 = \frac{\sum x^2 - \frac{(\sum x)^2}{n}}{n-1}</script></span>).</li>
+<li><code>count_unique</code> - number of units with at least 1 observed goal</li>
+</ol>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Evaluation</code></td>
+<td>
+<p>set of dataframes with evaluation</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="codehilite">
+<pre><span></span><code><span class="kn">from</span> <span class="nn">epstats.toolkit</span> <span class="kn">import</span> <span class="n">Experiment</span><span class="p">,</span> <span class="n">Metric</span><span class="p">,</span> <span class="n">SrmCheck</span>
+<span class="n">experiment</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
+    <span class="s1">'test-conversion'</span><span class="p">,</span>
+    <span class="s1">'a'</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Metric</span><span class="p">(</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">'Click-through Rate'</span><span class="p">,</span>
+        <span class="s1">'count(test_unit_type.unit.click)'</span><span class="p">,</span>
+        <span class="s1">'count(test_unit_type.global.exposure)'</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="p">[</span><span class="n">SrmCheck</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'SRM'</span><span class="p">,</span> <span class="s1">'count(test_unit_type.global.exposure)'</span><span class="p">)],</span>
+    <span class="n">unit_type</span><span class="o">=</span><span class="s1">'test_unit_type'</span><span class="p">)</span>
+
+<span class="c1"># This gets testing data, use other Dao or get aggregated goals in some other way.</span>
+<span class="kn">from</span> <span class="nn">epstats.toolkit.testing</span> <span class="kn">import</span> <span class="n">TestData</span>
+<span class="n">goals</span> <span class="o">=</span> <span class="n">TestData</span><span class="o">.</span><span class="n">load_goals_agg</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+<span class="c1"># evaluate experiment</span>
+<span class="n">ev</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">evaluate_agg</span><span class="p">(</span><span class="n">goals</span><span class="p">)</span>
+
+<span class="c1"># work with results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">exposures</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">metrics</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">checks</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">checks</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># this is to assert that this code sample works correctly</span>
+<span class="kn">from</span> <span class="nn">epstats.toolkit.testing</span> <span class="kn">import</span> <span class="n">TestDao</span>
+<span class="n">assert_experiment</span><span class="p">(</span><span class="n">experiment</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">TestDao</span><span class="p">(</span><span class="n">TestData</span><span class="p">()))</span>
+</code></pre>
+</div>
+<p>Input data frame example:</p>
+<div class="codehilite">
+<pre><span></span><code><span class="err">exp_id      exp_variant_id  unit_type           agg_type    goal            dimension       dimension_value     count   sum_sqr_count   sum_value   sum_sqr_value   count_unique</span>
+<span class="err">test-srm    a               test_unit_type      global      exposure                                            100000  100000          100000      100000          100000</span>
+<span class="err">test-srm    b               test_unit_type      global      exposure                                            100100  100100          100100      100100          100100</span>
+<span class="err">test-srm    a               test_unit_type      unit        conversion                                            1200    1800            32000       66528           900</span>
+<span class="err">test-srm    a               test_unit_type_2    global      conversion      product         product_1           1000    1700            31000       55000           850</span>
+</code></pre>
+</div>
+<details class="quote">
+<summary>Source code in <code>epstats/toolkit/experiment.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">evaluate_agg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">goals</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evaluation</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Evaluate all metrics and checks in the experiment from already pre-aggregated goals.</span>
+
+<span class="sd">    This method is usefull when there are too many units in the experiment to evaluate it</span>
+<span class="sd">    using [`evaluate_by_unit`][epstats.toolkit.experiment.Experiment.evaluate_by_unit].</span>
+
+<span class="sd">    Does best effort to fill in missing goals and variants with zeros.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        goals: dataframe with one row per goal and aggregated data in columns</span>
+
+<span class="sd">    `goals` dataframe columns:</span>
+
+<span class="sd">    1. `exp_id` - experiment id</span>
+<span class="sd">    1. `exp_variant_id` - variant</span>
+<span class="sd">    1. `unit_type` - randomization unit type</span>
+<span class="sd">    1. `agg_type` - level of aggregation</span>
+<span class="sd">    1. `goal` - goal name</span>
+<span class="sd">    1. `dimension` - name of the dimension, e.g. `product`</span>
+<span class="sd">    1. `dimension_value` - value of the dimension, e.g. `p_1`</span>
+<span class="sd">    1. `count` - number of observed goals (e.g. conversions)</span>
+<span class="sd">    1. `sum_sqr_count` - summed squared number of observed goals per unit, it is similar</span>
+<span class="sd">    to `sum_sqr_value`</span>
+<span class="sd">    1. `sum_value` - value of observed goals</span>
+<span class="sd">    1. `sum_sqr_value` - summed squared value per unit.  This is used to calculate</span>
+<span class="sd">    sample standard deviation from pre-aggregated data (it is a term $\sum x^2$</span>
+<span class="sd">    in $\hat{\sigma}^2 = \\frac{\sum x^2 - \\frac{(\sum x)^2}{n}}{n-1}$).</span>
+<span class="sd">    1. `count_unique` - number of units with at least 1 observed goal</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        set of dataframes with evaluation</span>
+
+<span class="sd">    Usage:</span>
+
+<span class="sd">    ```python</span>
+<span class="sd">    from epstats.toolkit import Experiment, Metric, SrmCheck</span>
+<span class="sd">    experiment = Experiment(</span>
+<span class="sd">        'test-conversion',</span>
+<span class="sd">        'a',</span>
+<span class="sd">        [Metric(</span>
+<span class="sd">            1,</span>
+<span class="sd">            'Click-through Rate',</span>
+<span class="sd">            'count(test_unit_type.unit.click)',</span>
+<span class="sd">            'count(test_unit_type.global.exposure)'),</span>
+<span class="sd">        ],</span>
+<span class="sd">        [SrmCheck(1, 'SRM', 'count(test_unit_type.global.exposure)')],</span>
+<span class="sd">        unit_type='test_unit_type')</span>
+
+<span class="sd">    # This gets testing data, use other Dao or get aggregated goals in some other way.</span>
+<span class="sd">    from epstats.toolkit.testing import TestData</span>
+<span class="sd">    goals = TestData.load_goals_agg(experiment.id)</span>
+
+<span class="sd">    # evaluate experiment</span>
+<span class="sd">    ev = experiment.evaluate_agg(goals)</span>
+
+<span class="sd">    # work with results</span>
+<span class="sd">    print(ev.exposures)</span>
+<span class="sd">    print(ev.metrics[ev.metrics == 1])</span>
+<span class="sd">    print(ev.checks[ev.checks == 1])</span>
+
+<span class="sd">    # this is to assert that this code sample works correctly</span>
+<span class="sd">    from epstats.toolkit.testing import TestDao</span>
+<span class="sd">    assert_experiment(experiment, ev, TestDao(TestData()))</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    Input data frame example:</span>
+
+<span class="sd">    ```</span>
+<span class="sd">    exp_id      exp_variant_id  unit_type           agg_type    goal            dimension       dimension_value     count   sum_sqr_count   sum_value   sum_sqr_value   count_unique</span>
+<span class="sd">    test-srm    a               test_unit_type      global      exposure                                            100000  100000          100000      100000          100000</span>
+<span class="sd">    test-srm    b               test_unit_type      global      exposure                                            100100  100100          100100      100100          100100</span>
+<span class="sd">    test-srm    a               test_unit_type      unit        conversion                                            1200    1800            32000       66528           900</span>
+<span class="sd">    test-srm    a               test_unit_type_2    global      conversion      product         product_1           1000    1700            31000       55000           850</span>
+<span class="sd">    ```</span>
+<span class="sd">    """</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fix_missing_agg</span><span class="p">(</span><span class="n">goals</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate</span><span class="p">(</span>
+        <span class="n">g</span><span class="p">,</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="n">_metrics_column_fce_agg</span><span class="p">,</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="n">_checks_fce_agg</span><span class="p">,</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="n">_exposures_fce_agg</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="epstats.toolkit.experiment.Experiment.evaluate_by_unit">
+<code class="highlight language-python">
+evaluate_by_unit<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">goals</span><span class="p">)</span> </code>
+<a class="headerlink" href="#epstats.toolkit.experiment.Experiment.evaluate_by_unit" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Evaluate all metrics and checks in the experiment from goals grouped by <code>unit_id</code>.</p>
+<p>This method is usefull when there are not many (&lt;1M) units in the experiment to evaluate it.
+If there many units exposed to the experiment, pre-aggregate data and use <a href="#epstats.toolkit.experiment.Experiment.evaluate_agg"><code>evaluate_agg</code></a>.</p>
+<p>Does best effort to fill in missing goals and variants with zeros.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>goals</code></td>
+<td><code>DataFrame</code></td>
+<td>
+<p>dataframe with one row per goal and aggregated data in columns</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><code>goals</code> dataframe columns:</p>
+<ol>
+<li><code>exp_id</code> - experiment id</li>
+<li><code>exp_variant_id</code> - variant</li>
+<li><code>unit_type</code> - randomization unit type</li>
+<li><code>unit_id</code> - (randomization) unit id</li>
+<li><code>agg_type</code> - level of aggregation</li>
+<li><code>goal</code> - goal name</li>
+<li><code>dimension</code> - name of the dimension, e.g. <code>product</code></li>
+<li><code>dimension_value</code> - value of the dimension, e.g. <code>p_1</code></li>
+<li><code>count</code> - number of observed goals</li>
+<li><code>sum_value</code> - value of observed goals</li>
+</ol>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Evaluation</code></td>
+<td>
+<p>set of dataframes with evaluation</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="codehilite">
+<pre><span></span><code><span class="kn">from</span> <span class="nn">epstats.toolkit</span> <span class="kn">import</span> <span class="n">Experiment</span><span class="p">,</span> <span class="n">Metric</span><span class="p">,</span> <span class="n">SrmCheck</span>
+<span class="n">experiment</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
+    <span class="s1">'test-real-valued'</span><span class="p">,</span>
+    <span class="s1">'a'</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">Metric</span><span class="p">(</span>
+        <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">'Average Bookings'</span><span class="p">,</span>
+        <span class="s1">'value(test_unit_type.unit.conversion)'</span><span class="p">,</span>
+        <span class="s1">'count(test_unit_type.unit.exposure)'</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="p">[],</span>
+    <span class="n">unit_type</span><span class="o">=</span><span class="s1">'test_unit_type'</span><span class="p">)</span>
+
+<span class="c1"># This gets testing data, use other Dao or get aggregated goals in some other way.</span>
+<span class="kn">from</span> <span class="nn">epstats.toolkit.testing</span> <span class="kn">import</span> <span class="n">TestData</span>
+<span class="n">goals</span> <span class="o">=</span> <span class="n">TestData</span><span class="o">.</span><span class="n">load_goals_by_unit</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+<span class="c1"># evaluate experiment</span>
+<span class="n">ev</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">evaluate_by_unit</span><span class="p">(</span><span class="n">goals</span><span class="p">)</span>
+
+<span class="c1"># work with results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">exposures</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">metrics</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">metrics</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">checks</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">checks</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># this is to assert that this code sample works correctly</span>
+<span class="kn">from</span> <span class="nn">epstats.toolkit.testing</span> <span class="kn">import</span> <span class="n">TestDao</span>
+<span class="n">assert_experiment</span><span class="p">(</span><span class="n">experiment</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">TestDao</span><span class="p">(</span><span class="n">TestData</span><span class="p">()))</span>
+</code></pre>
+</div>
+<p>Input data frame example:</p>
+<div class="codehilite">
+<pre><span></span><code><span class="err">exp_id      exp_variant_id  unit_type       unit_id             agg_type    goal              dimension         dimension_value     count   sum_value</span>
+<span class="err">test-srm    a               test_unit_type  test_unit_type_1    unit        exposure                                                1       1</span>
+<span class="err">test-srm    a               test_unit_type  test_unit_type_1    unit        conversion        product           product_1           2       75</span>
+<span class="err">test-srm    b               test_unit_type  test_unit_type_2    unit        exposure                                                1       1</span>
+<span class="err">test-srm    b               test_unit_type  test_unit_type_3    unit        exposure                                                1       1</span>
+<span class="err">test-srm    b               test_unit_type  test_unit_type_3    unit        conversion        product           product_2           1       1</span>
+</code></pre>
+</div>
+<details class="quote">
+<summary>Source code in <code>epstats/toolkit/experiment.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">evaluate_by_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">goals</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evaluation</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Evaluate all metrics and checks in the experiment from goals grouped by `unit_id`.</span>
+
+<span class="sd">    This method is usefull when there are not many (&lt;1M) units in the experiment to evaluate it.</span>
+<span class="sd">    If there many units exposed to the experiment, pre-aggregate data and use [`evaluate_agg`][epstats.toolkit.experiment.Experiment.evaluate_agg].</span>
+
+<span class="sd">    Does best effort to fill in missing goals and variants with zeros.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        goals: dataframe with one row per goal and aggregated data in columns</span>
+
+<span class="sd">    `goals` dataframe columns:</span>
+
+<span class="sd">    1. `exp_id` - experiment id</span>
+<span class="sd">    1. `exp_variant_id` - variant</span>
+<span class="sd">    1. `unit_type` - randomization unit type</span>
+<span class="sd">    1. `unit_id` - (randomization) unit id</span>
+<span class="sd">    1. `agg_type` - level of aggregation</span>
+<span class="sd">    1. `goal` - goal name</span>
+<span class="sd">    1. `dimension` - name of the dimension, e.g. `product`</span>
+<span class="sd">    1. `dimension_value` - value of the dimension, e.g. `p_1`</span>
+<span class="sd">    1. `count` - number of observed goals</span>
+<span class="sd">    1. `sum_value` - value of observed goals</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        set of dataframes with evaluation</span>
+
+<span class="sd">    Usage:</span>
+
+<span class="sd">    ```python</span>
+<span class="sd">    from epstats.toolkit import Experiment, Metric, SrmCheck</span>
+<span class="sd">    experiment = Experiment(</span>
+<span class="sd">        'test-real-valued',</span>
+<span class="sd">        'a',</span>
+<span class="sd">        [Metric(</span>
+<span class="sd">            2,</span>
+<span class="sd">            'Average Bookings',</span>
+<span class="sd">            'value(test_unit_type.unit.conversion)',</span>
+<span class="sd">            'count(test_unit_type.unit.exposure)')</span>
+<span class="sd">        ],</span>
+<span class="sd">        [],</span>
+<span class="sd">        unit_type='test_unit_type')</span>
+
+<span class="sd">    # This gets testing data, use other Dao or get aggregated goals in some other way.</span>
+<span class="sd">    from epstats.toolkit.testing import TestData</span>
+<span class="sd">    goals = TestData.load_goals_by_unit(experiment.id)</span>
+
+<span class="sd">    # evaluate experiment</span>
+<span class="sd">    ev = experiment.evaluate_by_unit(goals)</span>
+
+<span class="sd">    # work with results</span>
+<span class="sd">    print(ev.exposures)</span>
+<span class="sd">    print(ev.metrics[ev.metrics == 1])</span>
+<span class="sd">    print(ev.checks[ev.checks == 1])</span>
+
+<span class="sd">    # this is to assert that this code sample works correctly</span>
+<span class="sd">    from epstats.toolkit.testing import TestDao</span>
+<span class="sd">    assert_experiment(experiment, ev, TestDao(TestData()))</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    Input data frame example:</span>
+
+<span class="sd">    ```</span>
+<span class="sd">    exp_id      exp_variant_id  unit_type       unit_id             agg_type    goal              dimension         dimension_value     count   sum_value</span>
+<span class="sd">    test-srm    a               test_unit_type  test_unit_type_1    unit        exposure                                                1       1</span>
+<span class="sd">    test-srm    a               test_unit_type  test_unit_type_1    unit        conversion        product           product_1           2       75</span>
+<span class="sd">    test-srm    b               test_unit_type  test_unit_type_2    unit        exposure                                                1       1</span>
+<span class="sd">    test-srm    b               test_unit_type  test_unit_type_3    unit        exposure                                                1       1</span>
+<span class="sd">    test-srm    b               test_unit_type  test_unit_type_3    unit        conversion        product           product_2           1       1</span>
+<span class="sd">    ```</span>
+<span class="sd">    """</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fix_missing_by_unit</span><span class="p">(</span><span class="n">goals</span><span class="p">)</span>
+
+    <span class="c1"># We need to pivot table to get all goals per `unit_id` on the same row in the data frame.</span>
+    <span class="c1"># This is needed to be able to vector-evaluate compound metrics</span>
+    <span class="c1"># eg. `value(test_unit_type.unit.conversion) - value(test_unit_type.unit.refund)`</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+            <span class="n">g</span><span class="p">,</span>
+            <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">'count'</span><span class="p">,</span> <span class="s1">'sum_value'</span><span class="p">],</span>
+            <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+                <span class="s1">'exp_id'</span><span class="p">,</span>
+                <span class="s1">'exp_variant_id'</span><span class="p">,</span>
+                <span class="s1">'unit_type'</span><span class="p">,</span>
+                <span class="s1">'agg_type'</span><span class="p">,</span>
+                <span class="s1">'unit_id'</span><span class="p">,</span>
+                <span class="s1">'dimension'</span><span class="p">,</span>
+                <span class="s1">'dimension_value'</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">columns</span><span class="o">=</span><span class="s1">'goal'</span><span class="p">,</span>
+            <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span>
+            <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">swaplevel</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_evaluate</span><span class="p">(</span>
+        <span class="n">g</span><span class="p">,</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="n">_metrics_column_fce_by_unit</span><span class="p">,</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="n">_checks_fce_by_unit</span><span class="p">,</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="n">_exposures_fce_by_unit</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="epstats.toolkit.experiment.Experiment.get_goals">
+<code class="highlight language-python">
+get_goals<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
+<a class="headerlink" href="#epstats.toolkit.experiment.Experiment.get_goals" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>List of all goals needed to evaluate all metrics and checks in the experiment.</p>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[epstats.toolkit.parser.EpGoal]</code></td>
+<td>
+<p>list of parsed structured goals</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>epstats/toolkit/experiment.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_goals</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">EpGoal</span><span class="p">]:</span>
+    <span class="sd">"""</span>
+<span class="sd">    List of all goals needed to evaluate all metrics and checks in the experiment.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list of parsed structured goals</span>
+<span class="sd">    """</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">get_goals</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">checks</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get_goals</span><span class="p">())</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_exposure_goals</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../stats/multiple.html" rel="prev" title="Multiple Comparison Correction">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Multiple Comparison Correction
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="evaluation.html" rel="next" title="Evaluation">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Evaluation
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Maintained by <a href="https://github.com/avast">Avast</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+<script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

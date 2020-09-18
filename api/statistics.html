@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Evaluation package for experimentation platform." name="description"/>
+<link href="https://github.com/avast/ep-stats/api/statistics.html" rel="canonical"/>
+<meta content="Team Doodlebug" name="author"/>
+<link href="../experiment_b.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.12" name="generator"/>
+<title>Statistics - Ep-Stats</title>
+<link href="../assets/stylesheets/main.4dd2dd8d.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#statistics">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Ep-Stats" class="md-header-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Ep-Stats
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              Statistics
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+          Home
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../user_guide/quick_start.html">
+          User Guide
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../stats/basics.html">
+          Statistics
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="experiment.html">
+          API
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Ep-Stats" class="md-nav__button md-logo" href="https://github.com/avast/ep-stats" title="Ep-Stats">
+<img alt="logo" src="../experiment_w.png"/>
+</a>
+    Ep-Stats
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/avast/ep-stats/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    avast/ep-stats
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Home" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html" title="Introduction">
+      Introduction
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../principles.html" title="Principles">
+      Principles
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../resources.html" title="Resources">
+      Resources
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="User Guide" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/quick_start.html" title="Quick Start">
+      Quick Start
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/protocol.html" title="Experimentation Protocol">
+      Experimentation Protocol
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/ep_in_python.ipynb" title="Using Ep-Stats in Jupyter">
+      Using Ep-Stats in Jupyter
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/aggregation.html" title="Aggregation">
+      Aggregation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/configuring_api.html" title="Configuring API">
+      Configuring API
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../user_guide/test_data.html" title="Test Data">
+      Test Data
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Statistics
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Statistics" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon"></span>
+        Statistics
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/basics.html" title="Basics">
+      Basics
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/sample_size.html" title="Sample Size">
+      Sample Size
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/sequential.html" title="Sequential Evaluation">
+      Sequential Evaluation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/ctr.html" title="CTR Metric Redefined">
+      CTR Metric Redefined
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../stats/multiple.html" title="Multiple Comparison Correction">
+      Multiple Comparison Correction
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      API
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="API" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon"></span>
+        API
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="experiment.html" title="Experiment">
+      Experiment
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="evaluation.html" title="Evaluation">
+      Evaluation
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Statistics
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="statistics.html" title="Statistics">
+      Statistics
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics">
+    epstats.toolkit.statistics.Statistics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics.multiple_comparisons_correction">
+    multiple_comparisons_correction()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics.obf_alpha_spending_function">
+    obf_alpha_spending_function()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics.ttest_evaluation">
+    ttest_evaluation()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="check.html" title="Check">
+      Check
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="srm_check.html" title="SrmCheck">
+      SrmCheck
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dao.html" title="Dao">
+      Dao
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dao_factory.html" title="DaoFactory">
+      DaoFactory
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="test_data.html" title="TestData">
+      TestData
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics">
+    epstats.toolkit.statistics.Statistics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics.multiple_comparisons_correction">
+    multiple_comparisons_correction()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics.obf_alpha_spending_function">
+    obf_alpha_spending_function()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#epstats.toolkit.statistics.Statistics.ttest_evaluation">
+    ttest_evaluation()
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/avast/ep-stats/edit/master/docs/api/statistics.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">¶</a></h1>
+<div class="doc doc-object doc-class">
+<h2 class="hidden-toc" href="#epstats.toolkit.statistics.Statistics" id="epstats.toolkit.statistics.Statistics" style="visibility: hidden; width: 0; height: 0;">
+<a class="headerlink" href="#epstats.toolkit.statistics.Statistics" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents first">
+<p>Various methods needed to evaluate experiment.</p>
+<div class="doc doc-children">
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="epstats.toolkit.statistics.Statistics.multiple_comparisons_correction">
+<code class="highlight language-python">
+multiple_comparisons_correction<span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variants</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">confidence_level</span><span class="p">)</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+</span>
+<a class="headerlink" href="#epstats.toolkit.statistics.Statistics.multiple_comparisons_correction" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p><a href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method">Holm-Bonferroni correction</a>
+for multiple comparisons problem. It is applied when we have more than two variants,
+i.e. we have one control variant and at least two treatment variants.</p>
+<p>It adjusts p-value and length of confidence interval - both to be more conservative.
+<a href="../stats/multiple.html">Complete manual</a></p>
+<p>Algorithm:</p>
+<p>For each metric, select (unadjusted) p-values and replace them with adjusted ones.
+Based on adjustment ratio, compute new (adjusted) confidence intervals and replace
+old (unadjusted) ones.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>df</code></td>
+<td><code>DataFrame</code></td>
+<td>
+<p>dataframe as output of <a href="#epstats.toolkit.statistics.Statistics.ttest_evaluation"><code>ttest_evaluation</code></a></p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>variants</code></td>
+<td><code>int</code></td>
+<td>
+<p>number of variants in the experiment</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>metrics</code></td>
+<td><code>int</code></td>
+<td>
+<p>number of metrics of experiment</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>confidence_level</code></td>
+<td><code>float</code></td>
+<td>
+<p>desired confidence level at the end of the experiment, e.g. 0.95</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DataFrame</code></td>
+<td>
+<p>dataframe of the same format as input with adjusted p-values and confidence intervals.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>epstats/toolkit/statistics.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">multiple_comparisons_correction</span><span class="p">(</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">variants</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">metrics</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">confidence_level</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    [Holm-Bonferroni correction](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method)</span>
+<span class="sd">    for multiple comparisons problem. It is applied when we have more than two variants,</span>
+<span class="sd">    i.e. we have one control variant and at least two treatment variants.</span>
+
+<span class="sd">    It adjusts p-value and length of confidence interval - both to be more conservative.</span>
+<span class="sd">    [Complete manual](../stats/multiple.md)</span>
+
+<span class="sd">    Algorithm:</span>
+
+<span class="sd">    For each metric, select (unadjusted) p-values and replace them with adjusted ones.</span>
+<span class="sd">    Based on adjustment ratio, compute new (adjusted) confidence intervals and replace</span>
+<span class="sd">    old (unadjusted) ones.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        df: dataframe as output of [`ttest_evaluation`][epstats.toolkit.statistics.Statistics.ttest_evaluation]</span>
+<span class="sd">        variants: number of variants in the experiment</span>
+<span class="sd">        metrics: number of metrics of experiment</span>
+<span class="sd">        confidence_level: desired confidence level at the end of the experiment, e.g. 0.95</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dataframe of the same format as input with adjusted p-values and confidence intervals.</span>
+<span class="sd">    """</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">confidence_level</span>  <span class="c1"># level of significance</span>
+
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">metrics</span><span class="p">):</span>
+        <span class="c1"># indices of rows with metric m data</span>
+        <span class="n">index_from</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="n">variants</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">index_to</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">variants</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># p-value adjustment</span>
+        <span class="n">pvals</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_from</span><span class="p">:</span><span class="n">index_to</span><span class="p">,</span> <span class="s1">'p_value'</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>  <span class="c1"># select old p-values</span>
+        <span class="n">adj_pvals</span> <span class="o">=</span> <span class="n">multipletests</span><span class="p">(</span><span class="n">pvals</span><span class="o">=</span><span class="n">pvals</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'holm'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># compute adjusted p-values</span>
+
+        <span class="c1"># confidence interval adjustment</span>
+        <span class="c1"># we set ratio to 1 when test_stat is so big that pvals are zero, no reason to update ci</span>
+        <span class="n">adj_ratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="n">pvals</span> <span class="o">/</span> <span class="n">adj_pvals</span><span class="p">,</span> <span class="n">nan</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># adjustment ratio</span>
+        <span class="n">adj_alpha</span> <span class="o">=</span> <span class="n">adj_ratio</span> <span class="o">*</span> <span class="n">alpha</span>  <span class="c1"># adjusted level alpha</span>
+
+        <span class="n">f</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_from</span><span class="p">:</span><span class="n">index_to</span><span class="p">,</span> <span class="s1">'degrees_of_freedom'</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>  <span class="c1"># degrees of freedom</span>
+        <span class="n">se</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_from</span><span class="p">:</span><span class="n">index_to</span><span class="p">,</span> <span class="s1">'standard_error'</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>  <span class="c1"># standard error</span>
+
+        <span class="n">t_quantile</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">variants</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">adj_alpha</span> <span class="o">+</span> <span class="n">adj_alpha</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>  <span class="c1"># right t-quantile</span>
+        <span class="n">adj_conf_int</span> <span class="o">=</span> <span class="n">se</span> <span class="o">*</span> <span class="n">t_quantile</span>  <span class="c1"># adjusted confidence interval</span>
+
+        <span class="c1"># replace (unadjusted) p-values and confidence intervals with new adjusted ones</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_from</span><span class="p">:</span><span class="n">index_to</span><span class="p">,</span> <span class="s1">'p_value'</span><span class="p">]</span> <span class="o">=</span> <span class="n">adj_pvals</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_from</span><span class="p">:</span><span class="n">index_to</span><span class="p">,</span> <span class="s1">'confidence_interval'</span><span class="p">]</span> <span class="o">=</span> <span class="n">adj_conf_int</span>
+    <span class="k">return</span> <span class="n">df</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="epstats.toolkit.statistics.Statistics.obf_alpha_spending_function">
+<code class="highlight language-python">
+obf_alpha_spending_function<span class="p">(</span><span class="n">confidence_level</span><span class="p">,</span> <span class="n">total_length</span><span class="p">,</span> <span class="n">actual_day</span><span class="p">)</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+</span>
+<a class="headerlink" href="#epstats.toolkit.statistics.Statistics.obf_alpha_spending_function" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p><a href="https://online.stat.psu.edu/stat509/node/80/">O'Brien-Fleming alpha spending function</a>.
+We adjust confidence level in time in experiment. Confidence level in this setting is
+a decreasing function of experiment time. See <a href="../stats/sequential.html">Sequential Analysis</a> for details.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confidence_level</code></td>
+<td><code>int</code></td>
+<td>
+<p>required confidence level at the end of the test, e.g. 0.95</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>total_length</code></td>
+<td><code>int</code></td>
+<td>
+<p>length of the test in days, e.g. 7, 14, 21</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>actual_day</code></td>
+<td><code>int</code></td>
+<td>
+<p>actual days in the experiment period, must be between 1 and <code>total_length</code></p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>
+<p>adjusted confidence level with respect to actual day of the experiment and total
+length of the experiment.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>epstats/toolkit/statistics.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">obf_alpha_spending_function</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">confidence_level</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">total_length</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">actual_day</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    [O'Brien-Fleming alpha spending function](https://online.stat.psu.edu/stat509/node/80/).</span>
+<span class="sd">    We adjust confidence level in time in experiment. Confidence level in this setting is</span>
+<span class="sd">    a decreasing function of experiment time. See [Sequential Analysis](../stats/sequential.md) for details.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        confidence_level: required confidence level at the end of the test, e.g. 0.95</span>
+<span class="sd">        total_length: length of the test in days, e.g. 7, 14, 21</span>
+<span class="sd">        actual_day: actual days in the experiment period, must be between 1 and `total_length`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        adjusted confidence level with respect to actual day of the experiment and total</span>
+<span class="sd">        length of the experiment.</span>
+<span class="sd">    """</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">confidence_level</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">actual_day</span> <span class="o">/</span> <span class="n">total_length</span>  <span class="c1"># t in (0, 1]</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># quantile of normal distribution</span>
+    <span class="n">alpha_adj</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">q</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha_adj</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="epstats.toolkit.statistics.Statistics.ttest_evaluation">
+<code class="highlight language-python">
+ttest_evaluation<span class="p">(</span><span class="n">stats</span><span class="p">)</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+</span>
+<a class="headerlink" href="#epstats.toolkit.statistics.Statistics.ttest_evaluation" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Testing statistical significance of relative difference in means of treatment and control variant.</p>
+<p>This is inspired by <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind_from_stats.html">scipy.stats.ttest_ind_from_stats</a>
+method that returns many more statistics than p-value and test statistic.</p>
+<p>Statistics used:</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Welch%27s_t-test">Welch's t-test</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation">Welch–Satterthwaite equation</a>
+approximation of degrees of freedom.</li>
+</ol>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stats</code></td>
+<td><code>&lt;built-in function array&gt;</code></td>
+<td>
+<p>array with dimensions (metrics, variants, stats)</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><code>stats</code> array values:</p>
+<ol>
+<li><code>metric_id</code></li>
+<li><code>metric_name</code></li>
+<li><code>exp_variant_id</code></li>
+<li><code>count</code></li>
+<li><code>mean</code></li>
+<li><code>std</code></li>
+<li><code>sum_value</code></li>
+<li><code>sum_sqr_value</code></li>
+</ol>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DataFrame</code></td>
+<td>
+<p>dataframe containing statistics from the t-test</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Schema of returned dataframe:</p>
+<ol>
+<li><code>metric_id</code> - metric id as in <a href="experiment.html#epstats.toolkit.experiment.Experiment"><code>Experiment</code></a> definition</li>
+<li><code>metric_name</code> - metric name as in <a href="experiment.html#epstats.toolkit.experiment.Experiment"><code>Experiment</code></a> definition</li>
+<li><code>exp_variant_id</code> - variant id</li>
+<li><code>count</code> - number of exposures, value of metric denominator</li>
+<li><code>mean</code> - <code>sum_value</code> / <code>count</code></li>
+<li><code>std</code> - sample standard deviation</li>
+<li><code>sum_value</code> - value of goals, value of metric nominator</li>
+<li><code>confidence_level</code> - current confidence level used to calculate <code>p_value</code> and <code>confidence_interval</code></li>
+<li><code>diff</code> - relative diff between sample means of this and control variant</li>
+<li><code>test_stat</code> - value of test statistic of the relative difference in means</li>
+<li><code>p_value</code> - p-value of the test statistic under current <code>confidence_level</code></li>
+<li><code>confidence_interval</code> - confidence interval of the <code>diff</code> under current <code>confidence_level</code></li>
+<li><code>standard_error</code> - standard error of the <code>diff</code></li>
+<li><code>degrees_of_freedom</code> - degrees of freedom of this variant mean</li>
+</ol>
+<details class="quote">
+<summary>Source code in <code>epstats/toolkit/statistics.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span> 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">ttest_evaluation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">stats</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Testing statistical significance of relative difference in means of treatment and control variant.</span>
+
+<span class="sd">    This is inspired by [scipy.stats.ttest_ind_from_stats](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind_from_stats.html)</span>
+<span class="sd">    method that returns many more statistics than p-value and test statistic.</span>
+
+<span class="sd">    Statistics used:</span>
+
+<span class="sd">    1. [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test)</span>
+<span class="sd">    1. [Welch–Satterthwaite equation](https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation)</span>
+<span class="sd">    approximation of degrees of freedom.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        stats: array with dimensions (metrics, variants, stats)</span>
+
+<span class="sd">    `stats` array values:</span>
+
+<span class="sd">    0. `metric_id`</span>
+<span class="sd">    1. `metric_name`</span>
+<span class="sd">    1. `exp_variant_id`</span>
+<span class="sd">    1. `count`</span>
+<span class="sd">    1. `mean`</span>
+<span class="sd">    1. `std`</span>
+<span class="sd">    1. `sum_value`</span>
+<span class="sd">    1. `sum_sqr_value`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dataframe containing statistics from the t-test</span>
+
+<span class="sd">    Schema of returned dataframe:</span>
+
+<span class="sd">    1. `metric_id` - metric id as in [`Experiment`][epstats.toolkit.experiment.Experiment] definition</span>
+<span class="sd">    1. `metric_name` - metric name as in [`Experiment`][epstats.toolkit.experiment.Experiment] definition</span>
+<span class="sd">    1. `exp_variant_id` - variant id</span>
+<span class="sd">    1. `count` - number of exposures, value of metric denominator</span>
+<span class="sd">    1. `mean` - `sum_value` / `count`</span>
+<span class="sd">    1. `std` - sample standard deviation</span>
+<span class="sd">    1. `sum_value` - value of goals, value of metric nominator</span>
+<span class="sd">    1. `confidence_level` - current confidence level used to calculate `p_value` and `confidence_interval`</span>
+<span class="sd">    1. `diff` - relative diff between sample means of this and control variant</span>
+<span class="sd">    1. `test_stat` - value of test statistic of the relative difference in means</span>
+<span class="sd">    1. `p_value` - p-value of the test statistic under current `confidence_level`</span>
+<span class="sd">    1. `confidence_interval` - confidence interval of the `diff` under current `confidence_level`</span>
+<span class="sd">    1. `standard_error` - standard error of the `diff`</span>
+<span class="sd">    1. `degrees_of_freedom` - degrees of freedom of this variant mean</span>
+<span class="sd">    """</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">stat_res</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># semiresults</span>
+    <span class="n">variants_count</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># number of variants</span>
+
+    <span class="c1"># get only stats (not metric_id, metric_name, exp_variant_id) from the stats array as floats</span>
+    <span class="n">stats_values</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="c1"># control variant values</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">stats_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">count_cont</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># number of observations</span>
+    <span class="n">mean_cont</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># mean</span>
+    <span class="n">std_cont</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># standard deviation</span>
+    <span class="n">conf_level</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># confidence level</span>
+
+    <span class="c1"># this for loop goes over variants and compares one variant values against control variant values for</span>
+    <span class="c1"># all metrics at once. Similar to scipy.stats.ttest_ind_from_stats</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">variants_count</span><span class="p">):</span>
+        <span class="c1"># treatment variant data</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">stats_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">count_treat</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># number of observations</span>
+        <span class="n">mean_treat</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># mean</span>
+        <span class="n">std_treat</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># standard deviation</span>
+
+        <span class="c1"># degrees of freedom</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="n">std_cont</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">count_cont</span> <span class="o">+</span> <span class="n">std_treat</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">count_treat</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">den</span> <span class="o">=</span> <span class="p">(</span><span class="n">std_cont</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="n">count_cont</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">count_cont</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">+</span> <span class="p">(</span>
+            <span class="n">std_treat</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="p">(</span><span class="n">count_treat</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">count_treat</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">):</span>
+            <span class="c1"># We fill in zeros, when goal data are missing for some variant.</span>
+            <span class="c1"># There could be division by zero here which is expected as we return</span>
+            <span class="c1"># nan or inf values to the caller.</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>  <span class="c1"># degrees of freedom</span>
+
+        <span class="c1"># t-quantile</span>
+        <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
+            <span class="n">t_quantile</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">conf_level</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">conf_level</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>  <span class="c1"># right quantile</span>
+
+        <span class="c1"># relative difference and test statistics</span>
+        <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">):</span>
+            <span class="c1"># We fill in zeros, when goal data are missing for some variant.</span>
+            <span class="c1"># There could be division by zero here which is expected as we return</span>
+            <span class="c1"># nan or inf values to the caller.</span>
+            <span class="n">rel_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean_treat</span> <span class="o">-</span> <span class="n">mean_cont</span><span class="p">)</span> <span class="o">/</span> <span class="n">mean_cont</span>
+            <span class="c1"># standard error for relative difference</span>
+            <span class="n">rel_se</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">(</span><span class="n">mean_treat</span> <span class="o">*</span> <span class="n">std_cont</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">mean_cont</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">count_cont</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">std_treat</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">count_treat</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="o">/</span> <span class="n">mean_cont</span>
+            <span class="p">)</span>
+            <span class="n">test_stat</span> <span class="o">=</span> <span class="n">rel_diff</span> <span class="o">/</span> <span class="n">rel_se</span>
+
+        <span class="c1"># p-value</span>
+        <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
+            <span class="n">pval</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">st</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">test_stat</span><span class="p">),</span> <span class="n">f</span><span class="p">))</span>
+
+        <span class="c1"># confidence interval</span>
+        <span class="n">conf_int</span> <span class="o">=</span> <span class="n">rel_se</span> <span class="o">*</span> <span class="n">t_quantile</span>
+
+        <span class="c1"># save results</span>
+        <span class="n">stat_res</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rel_diff</span><span class="p">,</span> <span class="n">test_stat</span><span class="p">,</span> <span class="n">pval</span><span class="p">,</span> <span class="n">conf_int</span><span class="p">,</span> <span class="n">rel_se</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
+
+    <span class="c1"># Tune up results</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">stats</span><span class="p">,</span> <span class="n">stat_res</span><span class="p">])</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># move back to metrics, variants, stats order</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+    <span class="c1"># Output dataframe</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'metric_id'</span><span class="p">,</span>
+        <span class="s1">'metric_name'</span><span class="p">,</span>
+        <span class="s1">'exp_variant_id'</span><span class="p">,</span>
+        <span class="s1">'count'</span><span class="p">,</span>
+        <span class="s1">'mean'</span><span class="p">,</span>
+        <span class="s1">'std'</span><span class="p">,</span>
+        <span class="s1">'sum_value'</span><span class="p">,</span>
+        <span class="s1">'confidence_level'</span><span class="p">,</span>
+        <span class="s1">'diff'</span><span class="p">,</span>
+        <span class="s1">'test_stat'</span><span class="p">,</span>
+        <span class="s1">'p_value'</span><span class="p">,</span>
+        <span class="s1">'confidence_interval'</span><span class="p">,</span>
+        <span class="s1">'standard_error'</span><span class="p">,</span>
+        <span class="s1">'degrees_of_freedom'</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="evaluation.html" rel="prev" title="Evaluation">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Evaluation
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="check.html" rel="next" title="Check">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Check
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Maintained by <a href="https://github.com/avast">Avast</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+<script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: "..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
